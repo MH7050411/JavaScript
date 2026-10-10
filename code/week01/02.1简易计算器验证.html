@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>多功能输出计算器</title>
+    <style>
+        .box{
+            width: 300px;
+            margin: 50px auto;
+        }
+        #inputVal{
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom:10px;
+            box-sizing: border-box;
+        }
+        button{
+            width:70px;
+            height:50px;
+            font-size:20px;
+            margin:2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="text" id="inputVal" readonly>
+    <br>
+    <button>7</button><button>8</button><button>9</button><button>/</button>
+    <button>4</button><button>5</button><button>6</button><button>*</button>
+    <button>1</button><button>2</button><button>3</button><button>-</button>
+    <button>0</button><button>C</button><button>=</button><button>+</button>
+    <br>
+    <button style="width:142px;background:#f90;color:white" id="alertBtn">弹窗输出</button>
+    <button style="width:142px;background:#09c;color:white" id="logBtn">控制台输出</button>
+</div>
+
+<script>
+    // 获取输入框
+    let input = document.getElementById('inputVal');
+    // 获取全部按钮
+    let btns = document.querySelectorAll('button');
+
+    // 循环绑定点击事件
+    for(let i = 0; i < btns.length; i++){
+        btns[i].addEventListener('click',function(){
+            let txt = this.innerText;
+
+            // 清空
+            if(txt === 'C'){
+                input.value = '';
+            }
+            // 方式1：= 按钮 → 页面内输出结果
+            else if(txt === '='){
+                try{
+                    let result = eval(input.value);
+                    input.value = result;
+                }catch(err){
+                    input.value = "计算错误";
+                }
+            }
+            // 方式2：alert弹窗输出
+            else if(txt === "弹窗输出"){
+                try{
+                    let result = eval(input.value);
+                    alert("计算结果 = " + result);
+                }catch(err){
+                    alert("表达式错误！");
+                }
+            }
+            // 方式3：控制台输出（F12打开开发者工具查看）
+            else if(txt === "控制台输出"){
+                try{
+                    let result = eval(input.value);
+                    console.log("算式：", input.value);
+                    console.log("最终结果：", result);
+                }catch(err){
+                    console.log("计算失败，表达式非法");
+                }
+            }
+            // 拼接数字与运算符
+            else{
+                input.value += txt;
+            }
+        })
+    }
+</script>
+</body>
+</html>

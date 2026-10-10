@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09王慧琳</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="red">数智文创学院</button>
+    <button >25计应2班</button>
+    <button >王慧琳</button>
+
+    <script>
+        let bts = document.querySelectorAll('button');
+        for(let i=0;i<bts.length;i++){
+            bts[i].addEventListener('click',function(){
+                document.querySelector('.red').className= ''
+                this.className = 'red'
+        })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*图表标题样式，放在box上方*/
+        .title{
+            text-align:center;
+            font-size:22px;
+            margin-bottom:20px;
+        }
+
+
+        .box {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: pink;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box div span {
+
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- <div class="box">
+    <div style="height: 100px;">
+        <span>100px</span>
+        <h4>第1季度</h4>
+    </div> 
+    <div style="height: 100px;">
+        <span>100px</span>
+        <h4>第1季度</h4>
+    </div> 
+    <div style="height: 100px;">
+        <span>100px</span>
+        <h4>第1季度</h4>
+    </div> 
+    <div style="height: 100px;">
+        <span>100px</span>
+        <h4>第1季度</h4>
+    </div> 
+</div> -->
+<script>
+    // // 四个输入框输入数据--原始方法用变量
+    // let num1 = +prompt("请输入第1季度的销量")
+    // let num2 = +prompt("请输入第2季度的销量")
+    // let num3 = +prompt("请输入第3季度的销量")
+    // let num4 = +prompt("请输入第4季度的销量")
+    // 1. 四个输入框输入数据--用数组
+    let arr = []
+    for(let i = 0;i < 4 ;i++){
+        arr.push(+ prompt(`请输入第${i+1}季度的销量`))
+    }
+    console.log(arr)
+
+    // ✅第一步先输出标题！！画圈位置，box的上方
+    document.write(`
+        <div class="title">王慧琳的柱状图</div>
+    `)
+
+    // 盒子的开头
+    document.write(`
+    <div class="box">
+    `)
+    // 循环生成盒子
+    for(let i = 0;i < arr.length;i++){
+        document.write(`
+            <div style="height: ${arr[i]}px;">
+                <span>${arr[i]}px</span>
+                <h4>第${i + 1}季度</h4>
+            </div>
+        `)
+    }
+    // 盒子的结尾
+    document.write(`
+    </div>
+    `)
+    
+</script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+</head>
+<body>
+    <script>
+        let money = 1000
+        while(true){
+            let re = + prompt("请选择：1.取款 2.存款 3.查询余额 4.退出")
+            if(re === 4){
+                //用户选4，跳出while循环
+                break 
+            }
+            // 根据输入操作，完成对应功能
+            switch(re){
+                case 1:
+                    let qu = +prompt("请输入取款金额：")
+                    money = money - qu
+                    break
+                case 2:
+                    let cun = +prompt("请输入存款金额：")
+                    money = money + cun
+                    break
+                case 3:
+                    alert("余额为：" + money)
+                    break
+            }
+        }
+        
+    </script>
+</body>
+</html>
