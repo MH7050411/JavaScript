@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl_随机点名</title>
+    <style>
+        .box{
+            font-size:30px;
+            margin:30px;
+        }
+        button{
+            font-size:22px;
+            padding:8px 20px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>今日幸运人物：<span id="showName"></span></p>
+    </div>
+    <!-- 点击按钮执行点名 -->
+    <button onclick="randomCallName()">点击随机点名</button>
+
+    <script>
+        // 1.准备名单
+        let names = ['王慧琳','王慧琳1','王慧琳2','王慧琳3','王慧琳4','王慧琳5','王慧琳6','王慧琳7'];
+        // 获取显示名字的DOM容器
+        let showDom = document.getElementById('showName');
+
+        // 封装随机点名函数，可多次调用
+        function randomCallName(){
+            // ✅优化1：判断数组是否为空，所有人已经点完
+            if(names.length === 0){
+                showDom.innerText = "✅所有同学已经全部点完！";
+                return; // 直接结束函数，不再往下执行
+            }
+
+            // ✅优化2：变量改名，语义清晰 randomIndex随机下标
+            // 生成 0 ~ names.length-1 的随机整数
+            let randomIndex = Math.floor(Math.random() * names.length);
+            console.log('随机下标：', randomIndex);
+
+            // 获取选中的同学名字
+            let selectName = names[randomIndex];
+
+            // ✅优化3：DOM innerText渲染，代替document.write，不会覆盖页面
+            showDom.innerText = selectName;
+
+            // 删除已经点到的同学，避免重复点名
+            names.splice(randomIndex, 1);
+            console.log('剩余名单：', names);
+        }
+    </script>
+</body>
+</html>

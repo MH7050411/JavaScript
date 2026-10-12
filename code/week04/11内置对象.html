@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl_随机点名</title>
+</head>
+<body>
+    <script>
+        // let num = Math.random()*10
+        // console.log(num)
+        // let zhengshu = Math.floor(num)
+        // console.log(zhengshu)
+        // // 合并写法
+        // let res = Math.floor(Math.random()*10+1)
+        // console.log(res)
+
+        // 1. 准备名单
+        let names = ['王慧琳','王慧琳1','王慧琳2','王慧琳3','王慧琳4','王慧琳5','王慧琳6','王慧琳7']
+        console.log(names)
+        // 2.生成一个0-数组长度的随机整数 n-m(0-数组长度)
+        let ram = Math.floor(Math.random()*names.length)
+        console.log(ram)
+        // 3.在页面输出被选中的幸运儿
+        document.write(`今天的幸运人物是${names[ram]}`)
+        // 4. 删除随机生成的索引号
+        // names.splice(从哪删,删几个)
+        names.splice(ram,1)
+        console.log(names)
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息09whl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 30px;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .tip {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 16px;
+            font-size: 24px;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <h1>学生信息</h1>
+    <p class="tip">将数据渲染到页面中...</p>
+    <h2>学生列表</h2>
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        <script>
+            // 定义数组对象
+            let stu = [
+                {name:'王慧琳',age:18,gender:'女',home:'北京'},
+                {name:'w',age:8,gender:'男',home:'北京'},
+                {name:'h',age:28,gender:'女',home:'北京'},
+                {name:'l',age:38,gender:'男',home:'北京'},
+                {name:'王慧琳',age:18,gender:'女',home:'北京'},
+                {name:'w',age:8,gender:'男',home:'北京'},
+                {name:'h',age:28,gender:'女',home:'北京'},
+                {name:'l',age:38,gender:'男',home:'北京'},
+                {name:'王慧琳',age:18,gender:'女',home:'北京'},
+                {name:'w',age:8,gender:'男',home:'北京'},
+                {name:'h',age:28,gender:'女',home:'北京'},
+                {name:'l',age:38,gender:'男',home:'北京'},
+            ]
+            console.log(stu)
+            for(let i = 0;i<stu.length;i++){
+                document.write(`
+                                <tr>
+                                    <td>${i+1}</td>
+                                    <td>${stu[i].name}</td>
+                                    <td>${stu[i].age}</td>
+                                    <td>${stu[i].gender}</td>
+                                    <td>${stu[i].home}</td>
+                                </tr>
+                            `) 
+            }
+            
+        </script>
+    </table>
+</body>
+</html>

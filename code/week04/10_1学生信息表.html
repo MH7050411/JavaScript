@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息09whl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 30px;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .tip {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        /* 新增：学生统计样式 */
+        .total-count{
+            font-size:22px;
+            color:#2c3e50;
+            margin-bottom:25px;
+            font-weight:bold;
+        }
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 16px;
+            font-size: 24px;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        /* 新增：隔行变色 斑马纹 */
+        tbody tr:nth-child(even){
+            background-color: #f5f5f5;
+        }
+        /* 新增：鼠标悬浮高亮 */
+        tbody tr:hover{
+            background-color: #cce5ff !important;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>学生信息</h1>
+    <p class="tip">将数据渲染到页面中...</p>
+    <!-- 新增：学生总人数展示区域 -->
+    <p class="total-count">学生总人数：<span id="totalNum"></span> 人</p>
+    <h2>学生列表</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>家乡</th>
+            </tr>
+        </thead>
+        <tbody>
+        <script>
+            // 定义数组对象
+            let stu = [
+                {name:'王慧琳',age:18,gender:'女',home:'北京'},
+                {name:'w',age:8,gender:'男',home:'北京'},
+                {name:'h',age:28,gender:'女',home:'北京'},
+                {name:'l',age:38,gender:'男',home:'北京'},
+                {name:'王慧琳',age:18,gender:'女',home:'北京'},
+                {name:'w',age:8,gender:'男',home:'北京'},
+                {name:'h',age:28,gender:'女',home:'北京'},
+                {name:'l',age:38,gender:'男',home:'北京'},
+                {name:'王慧琳',age:18,gender:'女',home:'北京'},
+                {name:'w',age:8,gender:'男',home:'北京'},
+                {name:'h',age:28,gender:'女',home:'北京'},
+                {name:'l',age:38,gender:'男',home:'北京'},
+            ]
+            console.log(stu)
+            // ✨功能1：显示学生总人数，数组length属性
+            document.getElementById('totalNum').innerText = stu.length;
+
+            for(let i = 0;i<stu.length;i++){
+                document.write(`
+                                <tr>
+                                    <td>${i+1}</td>
+                                    <td>${stu[i].name}</td>
+                                    <td>${stu[i].age}</td>
+                                    <td>${stu[i].gender}</td>
+                                    <td>${stu[i].home}</td>
+                                </tr>
+                            `) 
+            }
+        </script>
+        </tbody>
+    </table>
+</body>
+</html>
