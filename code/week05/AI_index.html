@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09whl-网页渲染</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <!-- 4. box核心内容区域开始 -->
+    <div class="box w">
+        <div class="box-hd">
+            <h3>精品推荐</h3>
+            <a href="#">查看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul class="clearfix" id="listWrap">
+                <!-- JS动态生成li，不再写document.write -->
+            </ul>
+        </div>
+    </div>
+
+<script>
+    let data = [
+        {
+            src: 'images/course01.png',
+            title: 'Think PHP 5.0 博客系统实战项目演练',
+            num: 1125
+        },
+        {
+            src: 'images/course02.png',
+            title: 'Android 网络动态图片加载实战',
+            num: 357
+        },
+        {
+            src: 'images/course03.png',
+            title: 'Angular2 大前端商城实战项目演练',
+            num: 22250
+        },
+        {
+            src: 'images/course04.png',
+            title: 'Android APP 实战项目演练',
+            num: 389
+        },
+        {
+            src: 'images/course05.png',
+            title: 'UGUI 源码深度分析案例',
+            num: 124
+        },
+        {
+            src: 'images/course06.png',
+            title: 'Kami2首页界面切换效果实战演练',
+            num: 432
+        },
+        {
+            src: 'images/course07.png',
+            title: 'UNITY 从入门到精通实战案例',
+            num: 888
+        },
+        {
+            src: 'images/course08.png',
+            title: 'Cocos 深度学习你不会错过的实战',
+            num: 590
+        },
+        {
+            src: 'images/course07.png',
+            title: 'UNITY 从入门到精通实战案例',
+            num: 888
+        },
+        {
+            src: 'images/course08.png',
+            title: 'Cocos 深度学习你不会错过的实战',
+            num: 590
+        }
+    ]
+
+    // 1. 获取ul容器（给ul加id="listWrap"方便获取）
+    let ul = document.getElementById('listWrap');
+
+    // 2. 循环数组，每一项创建一套DOM元素
+    for(let i = 0; i < data.length; i++){
+        let item = data[i];
+
+        // 创建li
+        let li = document.createElement('li');
+        // 创建a标签
+        let a = document.createElement('a');
+        a.href = '#';
+
+        // 创建图片
+        let img = document.createElement('img');
+        img.src = item.src;
+
+        // 创建h4标题
+        let h4 = document.createElement('h4');
+        h4.innerText = item.title;
+
+        // 创建info盒子
+        let infoDiv = document.createElement('div');
+        infoDiv.className = 'info';
+
+        // 两个span
+        let span1 = document.createElement('span');
+        span1.innerText = '高级';
+
+        let span2 = document.createElement('span');
+        span2.innerText = item.num;
+
+        // 组装 info内部：<span>高级</span> • <span>数字</span>人在学习
+        infoDiv.appendChild(span1);
+        infoDiv.append(' • '); // 插入文本节点 间隔符号
+        infoDiv.appendChild(span2);
+        infoDiv.append('人在学习');
+
+        // 把 img h4 infoDiv 放进a里面
+        a.appendChild(img);
+        a.appendChild(h4);
+        a.appendChild(infoDiv);
+
+        // a放进li
+        li.appendChild(a);
+
+        // li追加到ul中
+        ul.appendChild(li);
+    }
+</script>
+</body>
+</html>

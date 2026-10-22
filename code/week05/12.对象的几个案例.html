@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+</head>
+<body>
+    <script>
+        // // 1. 随机点名
+        // let names = ['whl','小李','小张','小赵']
+        // // 0.1.2.3
+        // let ram = Math.floor(Math.random() * names.length)
+        // document.write(`今天幸运的人是${names[ram]}`)
+        // names.splicer(ram,1)
+        // 2. 猜数字 1-10之间随机数
+        ram = Math.floor(Math.random() * 10) + 1
+        console.log(ram)
+        // while(true){
+        //         let num = +prompt('whl你猜是几呢？')
+        //         if(num > ram){
+        //         alert('你猜大了')
+        //     }
+        //     else if(num < ram){
+        //         alert('你猜小了')
+        //     }
+        //     else{
+        //         alert('恭喜你猜对了')
+        //         break
+        //     }
+        // }
+        // 限制猜的次数为3，就是说只有3次机会，次数用完，无论对不对都不能继续猜了
+        for(let i = 0; i < 5; i++){
+            let num = +prompt('whl你猜是几呢？')
+            if(num > ram){
+            alert('你猜大了')
+            }
+            else if(num < ram){
+            alert('你猜小了')
+            }
+            else{
+            alert('恭喜你猜对了')
+            break
+            }
+        }
+        
+    </script>
+</body>
+</html>

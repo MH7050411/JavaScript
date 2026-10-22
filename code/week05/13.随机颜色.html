@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+    <style>
+        /* div{
+            width: 200px;
+            height: 200px;
+            background-color: #e60295;
+        } */
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        function getRandomColor(){
+           let num = +prompt('你选择的方式是1还是2')
+            if(num === 1){ 
+                // 1.生产#ffffff 16进制随机颜色
+                let str = '#'
+                let arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+                for(let i = 1; i <= 6; i++){
+                    ram = Math.floor(Math.random() * arr.length)
+                    str = str + arr[ram]
+                    console.log(str)
+                }
+                return str;
+            }
+            else if(num === 2){
+                // 2.生产RGB(255,255,255)随机颜色   Math.floor(Math.random() * (M - N + 1)) + N)
+                let r = Math.floor(Math.random() * 256)
+                let g = Math.floor(Math.random() * 256)
+                let b = Math.floor(Math.random() * 256)
+                let color = `rgb(${r},${g},${b})`
+                return color;
+            }
+            else{
+                alert('输入错误')
+            }
+        }
+        let bgColor = getRandomColor();
+        if(bgColor){ 
+            document.write(`
+                <div style="width: 200px; height: 200px; background-color: ${bgColor};">whl</div>
+            `)
+            document.write(`
+                <div style="width: 100px; height: 100px; background-color: ${bgColor};">whl</div>
+            `) 
+        }
+
+    </script>
+</body>
+</html>
