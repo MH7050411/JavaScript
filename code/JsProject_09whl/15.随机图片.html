@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl_随机图片</title>
+</head>
+<body>
+    <img src="./images/1.jpg" alt="">
+    <script>
+        let ram = Math.floor(Math.random() * 6 ) + 1
+        console.log(ram)
+        // 1.获取元素
+        const pic = document.querySelector('img')
+        console.log(pic)
+        // 2.修改属性
+        pic.src = `./images/${ram}.jpg`
+    </script>
+</body>
+</html>

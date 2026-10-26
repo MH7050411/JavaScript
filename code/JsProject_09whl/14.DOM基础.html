@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+    <style>
+        .red{
+            width: 200px;
+            height: 200px;
+            border: 1px solid burlywood;
+            color: red;
+        }
+        .big{
+            width: 500px;
+            height: 100px;
+            border: 2px solid rgb(182, 54, 182);
+            font-size: 20px;
+        }
+        .small{
+            width: 100px;
+            height: 15px;
+            border: 1px solid rgb(45, 201, 193);
+            font-size: 10px;
+        }
+        #school{
+             width: 100px;
+            height: 100px;
+            border: 2px solid rgb(176, 190, 92);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">王慧琳</div>
+    <div class="big">25计应2</div>
+    <div id="school">数智文创</div>
+    <p>2025044209</p>
+    <ul>
+        <li>a王慧琳</li>
+        <li>b王慧琳</li>
+        <li>c王慧琳</li>
+        <li>d王慧琳</li>
+        <li>e王慧琳</li>
+        <li>f王慧琳</li>
+        <li>g王慧琳</li>
+        <li>h王慧琳</li>
+    </ul>
+    <script>
+        // 1.获取元素
+        const box = document.querySelector('div')
+        const banji = document.querySelector('.big')
+        const xuehao = document.querySelector('p')
+        const xuexiao = document.querySelector('#school')
+        // console.log(box)
+        // console.log(banji)
+        // console.log(xuehao)
+        // console.log(xuexiao)
+       
+        const lis = document.querySelectorAll('ul li')
+        for(let i = 0;i < lis.length;i++){
+            console.log(lis[i])
+        }
+
+        // 2.修改内容
+        box.innerHTML = '王慧琳是个好人~'
+        banji.innerHTML = '25-2班王慧琳'
+        lis[4].innerHTML = '2025044209_whl'
+
+        // 3.修改属性
+        box.style.color = 'black'
+        xuexiao.style.height = '200px'
+        // banji.style.fontSize = '12px'
+        banji.className = 'small'
+    </script>
+</body>
+</html>
