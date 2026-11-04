@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl_事件基础</title>
+    <style>
+        i{
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+            font-size: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button>王慧琳</button> -->
+     <img src="./images/course01.png" alt="">
+     <i>X</i>
+    <script>
+        // // 1.先获取元素
+        const btn = document.querySelector('i')
+        console.log(btn)
+        const pic = document.querySelector('img')
+        console.log(pic)
+        // // 2.事件三要素
+        btn.addEventListener('click',function(){
+            pic.style.display = 'none'
+        })
+
+    </script>
+</body>
+</html>

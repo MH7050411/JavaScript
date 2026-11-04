@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl_事件基础</title>
+    <style>
+        /* 包裹图片和关闭按钮的容器：相对定位，作为参照物 */
+        .img-wrap {
+            position: relative;
+            display: inline-block; /* 宽度适配图片，不会占满一行 */
+        }
+        /* 关闭X按钮：绝对定位，右上角 */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+            /* 文字居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer; /* 鼠标悬浮变成小手 */
+            background: transparent; /* 背景透明 */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 增加外层容器 -->
+    <div class="img-wrap">
+        <img src="./images/course01.png" alt="">
+        <i class="close-btn">X</i>
+    </div>
+
+    <script>
+        // 1.获取元素
+        const closeBtn = document.querySelector('.close-btn')
+        const pic = document.querySelector('img')
+
+        // 2.点击事件：隐藏图片
+        closeBtn.addEventListener('click', function () {
+            pic.style.display = 'none'
+        })
+    </script>
+</body>
+</html>
+

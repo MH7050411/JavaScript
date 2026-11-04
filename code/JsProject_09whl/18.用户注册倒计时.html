@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        王慧琳注册协议
+        欢迎注册成为京东用户！在您注册过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务
+        【请您注意】如果您不同意以下协议全部或任何条款约定，请您停止注册。您停止注册后将仅可以浏览我们的商品信息但
+    </textarea>
+    <br>
+    <button class="btn">我已经阅读用户协议(5)</button>
+    <script>
+        // 1、获取按钮
+        const btn = document.querySelector('.btn')
+        console.log(btn)
+        // 2、修改按钮
+        btn.disabled = true
+        let i = 5
+
+        let id = setInterval(function(){
+            i--
+            btn.innerHTML = `我已经阅读用户协议(${i})`
+            // console.log(i)
+            if(i === 0){
+                clearInterval(id)
+                btn.disabled = false
+                btn.innerHTML = `同意`
+            }
+        },1000)
+        
+        
+    </script>
+</body>
+</html>

@@ -127,7 +127,6 @@
       { url: './images/slider08.jpg', title: '王慧琳谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
     let ram = Math.floor(Math.random() * sliderData.length)
-
     // 2.获取元素
     // 2.1图片
     const pic = document.querySelector('.slider-wrapper img')
@@ -137,7 +136,9 @@
     const box = document.querySelector('.slider-footer')
     // 2.4小圆点
     const lis = document.querySelectorAll('.slider-indicator li')
-    
+    // 激活的小圆点
+    const jiHuo = document.querySelector('.active')
+    console.log(jiHuo)
     // 3.修改元素
     // 3.1修改图片
     pic.src = sliderData[ram].url
@@ -146,8 +147,10 @@
     // 3.3修改盒子
     box.style.background = sliderData[ram].color
     // 3.4修改小圆点
-    lis[ram].className = 'active'
-
+    // 先删后加————排他思维
+    // lis[ram].className = 'active'
+    jiHuo.classList.remove('active')
+    lis[ram].classList.add('active')
   </script>
 </body>
 

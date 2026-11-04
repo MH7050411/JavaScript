@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09whl</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        王慧琳注册协议
+        欢迎注册成为京东用户！在您注册过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务
+        【请您注意】如果您不同意以下协议全部或任何条款约定，请您停止注册。您停止注册后将仅可以浏览我们的商品信息但
+    </textarea>
+    <br>
+    <button class="btn">我已经阅读用户协议(5)</button>
+    <script>
+        const btn = document.querySelector('.btn')
+        btn.disabled = true
+        // ✅ 优化1：把倒计时初始值抽成常量，方便修改
+        const totalTime = 5
+        let remainTime = totalTime
+        let timerId = setInterval(function () {
+            remainTime--
+            btn.textContent = `我已经阅读用户协议(${remainTime})`
+            if (remainTime === 0) {
+                clearInterval(timerId)
+                btn.disabled = false
+                btn.textContent = `同意`
+                // ✅ 优化2：增加点击事件，倒计时结束后点击给出提示
+                btn.onclick = function () {
+                    alert('您已同意用户协议！')
+                }
+            }
+        }, 1000)
+    </script>
+</body>
+</html>
