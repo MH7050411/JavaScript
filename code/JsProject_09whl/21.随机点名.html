@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09王慧琳_随机点名</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            min-height: 100vh;
+            /* 居中核心 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        .box {
+            background-color: #fff;
+            padding: 40px 60px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        h1 {
+            color: #2d3436;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #636e72;
+        }
+        span {
+            font-size: 32px;
+            font-weight: bold;
+            color: #d63031;
+            margin-left: 8px;
+        }
+        button {
+            padding: 12px 28px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.2s;
+        }
+        button:first-of-type {
+            background-color: #00b894;
+            color: white;
+        }
+        button:last-of-type {
+            background-color: #e17055;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>随机点名——王慧琳</h1>
+        <p>今日幸运儿：<span>名字显示在这里</span></p>
+        <button class="">开始</button>
+        <button>结束</button>
+    </div>
+    <script>
+        let names = ['王慧琳','王慧琳1','王慧琳2','王慧琳3','王慧琳4','王慧琳5','王慧琳6','王慧琳7']
+        
+        // 1. 获取文本元素
+        const mingZi = document.querySelector('div p span')
+        const btns = document.querySelectorAll('div button')
+        console.log(btns[0])
+        // onsole.log(mingZi)
+        // 2. 修改文本元素内容
+        let id = 0
+
+        // 3.添加事件_加定时器
+        btns[0].addEventListener('click', function(){
+            id = setInterval(function(){
+                let ram = Math.floor(Math.random()*names.length)
+                mingZi.innerHTML = names[ram]
+        },80)
+        })
+
+        // 4.添加事件_清除时器
+        btns[1].addEventListener('click', function(){
+            clearInterval(id)
+        })
+
+    </script>
+</body>
+</html>
